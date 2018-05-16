@@ -1,0 +1,16 @@
+header, footer{
+    background-color: #eeeeee;
+}
+
+footer {
+    padding: 10px 0;
+}
+
+.excluir {
+    color: #dc3545;
+}
+
+
+.btn-outline-danger :hover{
+        color: #eee;
+}
