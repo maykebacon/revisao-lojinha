@@ -1,19 +1,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <script src="assets/jquerry"></script>
+    <script src="assets/jquery/jquery.min.js"></script>
 
     <link rel="stylesheet" href="assets/css/principal.css">
 
     <script>
         $(document).ready(function () {
+            $("#abas ul li").addClass('selecionado');
             $("#abas ul li").click(function () {
-                $(this).addClass("selecionado");
+                $(this).toggleClass("selecionado");
                 //guardo o id dfe quem eu cliquei
-                var id = $(this).id();
-                $("."+id).show();
+                var id = $(this).attr("id");
+                $("."+id).toggle();
             });
-        };
+
+
+            $(".conteudo ").addClass('selecionado');
+            $(".conteudo ").click(function () {
+                $("#descricao").fadeOut();
+                $(this).toggleClass("selecionado");
+                //guardo o id dfe quem eu cliquei
+                var id = $(this).attr("descricao");
+                $("."+descricao).toggle();
+            });
+        });
+
         </script>
 </head>
 
@@ -22,24 +34,26 @@
     <section id="central">
         <div id="abas">
             <ul>
-                <li id="aba1">TAB1 </li>
-            </ul>
-            <ul>
-                <li id="aba2">TAB2 </li>
-            </ul>
-            <ul>
-                <li id="aba3">TAB3 </li>
+               <?php foreach($categorias as $categoria):?>
+                <li id="aba<?= $categoria->getId()?>"> <?= utf8_encode($categoria->getNome())?> </li>
+                <?php endforeach;?>
             </ul>
         </div>
-        <div id="conteudo da div 1">
-            conteudo da primeira aba
+
+
+
+        <?php foreach ($produtos as $produto):?>
+        <div class="conteudo aba<?= utf8_encode($produto->getIdCategoria())?>">
+            <?= $produto->getNome()?>
+            <div id="div1">
+                <?= $produto->getDescricao()?>
+            </div>
         </div>
-        <div id="conteudo da div 2">
-            conteudo da segunda aba
-        </div>
-        <div id="conteudo da div 3">
-            conteudo da terceira aba
-        </div>
+            <?php endforeach;?>
+
+
+
+
     </section>
 
 

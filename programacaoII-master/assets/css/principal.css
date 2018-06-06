@@ -1,6 +1,6 @@
 #abas{
     border: 1px solid green;
-    border stile: hidden;
+    border-style: hidden;
 }
 
 #abas ul{
@@ -8,9 +8,9 @@
     list-style: none;
 }
 
-#abas ul li{
+#abas ul {
     display: inline-block;
-    border: solid 1px black;
+
 }
 #abas ul li{
     float: left;
@@ -20,5 +20,10 @@
     border-radius: 10px 10px ;
 }
 .conteudo{
-    border: 1px solid red;
+    border: 1px solid darkred;
 }
+
+.selecionado{
+    background-color: darkgray;
+}
+

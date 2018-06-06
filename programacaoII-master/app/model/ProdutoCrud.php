@@ -37,7 +37,7 @@ class ProdutoCrud
             $prod->setNome($produto['nome_produto']);
             $prod->setFoto($produto['foto_produto']);
             $prod->setPreco($produto['preco_produto']);
-            $prod->setCategoria($produto['id_categoria']);
+            $prod->setIdCategoria($produto['id_categoria']);
 
             $listaProdutos[] = $prod;
         }
@@ -62,8 +62,8 @@ class ProdutoCrud
         $prod->setNome($produto['nome_produto']);
         $prod->setFoto($produto['foto_produto']);
         $prod->setPreco($produto['preco_produto']);
-        $prod->setCategoria($produto['id_categoria']);
-        
+        $prod->setIdCategoria($produto['id_categoria']);
+
 
         return $prod;
     }
@@ -90,7 +90,7 @@ class ProdutoCrud
             $prod->setNome($produto['nome_produto']);
             $prod->setFoto($produto['foto_produto']);
             $prod->setPreco($produto['preco_produto']);
-            $prod->setCategoria($produto['id_categoria']);
+            $prod->setIdCategoria($produto['id_categoria']);
 
             $listaProdutos[] = $prod;
         }
@@ -109,7 +109,7 @@ class ProdutoCrud
         $desc  = utf8_decode($produto->getDescricao());
         $foto  = utf8_decode($produto->getFoto());
         $preco = utf8_decode($produto->getPreco());
-        $cat   = utf8_decode($produto->getCategoria());
+        $cat   = utf8_decode($produto->getIdCategoria());
 
         $sql = "INSERT INTO produto (nome_produto, descricao_produto, foto_produto, preco_produto, id_categoria) VALUES ('{$nome}', '{$desc}', '{$foto}', '{$preco}', '{$cat}');";
 
@@ -124,7 +124,7 @@ class ProdutoCrud
         $desc  = utf8_decode($produto->getDescricao());
         $foto  = utf8_decode($produto->getFoto());
         $preco = utf8_decode($produto->getPreco());
-        $cat   = utf8_decode($produto->getCategoria());
+        $cat   = utf8_decode($produto->getIdCategoria());
         $id = $produto->getID();
 
         $sql = "UPDATE produto SET nome_produto = '$nome', descricao_produto = '$desc', foto_produto = '$foto', preco_produto = '$preco', id_categoria = '$cat' WHERE id_produto = $id";

@@ -13,11 +13,8 @@ class Produto
     private $descricao;
     private $foto;
     private $preco;
-    private $categoria;
+    private $idCategoria;
 
-    /**
-     * @param mixed $nome
-     */
     public function setNome($nome)
     {
         $this->nome = $nome;
@@ -37,14 +34,6 @@ class Produto
     public function setDescricao($descricao)
     {
         $this->descricao = $descricao;
-    }
-
-    /**
-     * @param mixed $categoria
-     */
-    public function setCategoria($categoria)
-    {
-        $this->categoria = $categoria;
     }
 
     /**
@@ -106,9 +95,12 @@ class Produto
     /**
      * @return mixed
      */
-    public function getCategoria()
+    public function getIdCategoria()
     {
-        return $this->categoria;
+        return $this->idCategoria;
+    }
+    public function setIdCategoria($idCategoria){
+        $this->idCategoria = $idCategoria;
     }
 
 
