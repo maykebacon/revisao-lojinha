@@ -18,11 +18,10 @@
 
             $(".conteudo ").addClass('selecionado');
             $(".conteudo ").click(function () {
-                $("#descricao").fadeOut();
                 $(this).toggleClass("selecionado");
                 //guardo o id dfe quem eu cliquei
-                var id = $(this).attr("descricao");
-                $("."+descricao).toggle();
+                var id = $(this).attr("id");
+                $(".desc"+ id).toggle();
             });
         });
 
@@ -35,7 +34,7 @@
         <div id="abas">
             <ul>
                <?php foreach($categorias as $categoria):?>
-                <li id="aba<?= $categoria->getId()?>"> <?= utf8_encode($categoria->getNome())?> </li>
+                <li id="aba<?= $categoria->getId()?>"> <?= $categoria->getNome()?> </li>
                 <?php endforeach;?>
             </ul>
         </div>
@@ -43,13 +42,18 @@
 
 
         <?php foreach ($produtos as $produto):?>
-        <div class="conteudo aba<?= utf8_encode($produto->getIdCategoria())?>">
-            <?= $produto->getNome()?>
-            <div id="div1">
-                <?= $produto->getDescricao()?>
+
+            <div class="conteudo aba<?= $produto->getIdCategoria()?>" id="<?= $produto->getId()?>">
+                <h1 class="titulo" >
+                    <?= $produto->getNome()?>
+                </h1>
+
+                <div id="div1" class="desc<?= $produto->getId()?>">
+                    <?= $produto->getDescricao()?>
+                </div>
             </div>
-        </div>
-            <?php endforeach;?>
+
+        <?php endforeach;?>
 
 
 

@@ -7,7 +7,7 @@
  */
 class Conexao {
     const HOST      = "localhost";
-    const NOMEBANCO = "3info";
+    const NOMEBANCO = "3info2";
     const USUARIO   = "root";
     const SENHA     = "root";
 

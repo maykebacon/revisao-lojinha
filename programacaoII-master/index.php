@@ -16,7 +16,7 @@ switch ($acao){
         $crudprod = new ProdutoCrud();
         $produtos = $crudprod->getProdutos();
 
-        include '/home/aluno/public_html/Loja-master/revisao-lojinha-master/programacaoII-master/app/views/principal/index.php';
+        include '/home/aluno/public_html/revisao-lojinha-master/programacaoII-master/app/views/principal/index.php';
         break;
 }
 

@@ -1,6 +1,6 @@
 <html>
 <head>
-    <base href="http://localhost/programacaoII/">
+    <base href="http://localhost/revisao-lojinha-master/programacaoII-master/">
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
